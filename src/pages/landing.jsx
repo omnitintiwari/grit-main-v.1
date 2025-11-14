@@ -35,14 +35,14 @@ const LandingPage = () => {
           Explore thousands of job listings or find the perfect candidate
         </p>
       </section>
-      <div className="flex gap-6 justify-center">
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4">
         <Link to={"/jobs"}>
-          <Button variant="blue" size="xl">
+          <Button variant="blue" size="xl" className="w-full sm:w-auto">
             Find Jobs
           </Button>
         </Link>
         <Link to={"/post-job"}>
-          <Button variant="destructive" size="xl">
+          <Button variant="destructive" size="xl" className="w-full sm:w-auto">
             Post a Job
           </Button>
         </Link>
@@ -53,7 +53,7 @@ const LandingPage = () => {
             delay: 2000,
           }),
         ]}
-        className="w-full py-10 ml-10"
+        className="w-full py-10 px-4 sm:px-10"
       >
         <CarouselContent className="flex gap-5 sm:gap-20 items-center">
           {companies.map(({ name, id, path }) => (
@@ -68,10 +68,10 @@ const LandingPage = () => {
         </CarouselContent>
       </Carousel>
 
-      <img src="/banner.jpg" className="w-full ml-28" />
+      <img src="/banner.jpg" className="w-full px-4 sm:px-10 lg:px-28" />
 
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <Card className="ml-40">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4 sm:px-10 lg:px-40">
+        <Card>
           <CardHeader>
             <CardTitle className="font-bold">For Job Seekers</CardTitle>
           </CardHeader>
@@ -79,7 +79,7 @@ const LandingPage = () => {
             Search and apply for jobs, track applications, and more.
           </CardContent>
         </Card>
-        <Card className="ml-100">
+        <Card>
           <CardHeader>
             <CardTitle className="font-bold">For Employers</CardTitle>
           </CardHeader>
@@ -89,7 +89,7 @@ const LandingPage = () => {
         </Card>
       </section>
 
-      <Accordion type="multiple" className="w-full ml-28">
+      <Accordion type="multiple" className="w-full px-4 sm:px-10 lg:px-28">
         {faqs.map((faq, index) => (
           <AccordionItem key={index} value={`item-${index + 1}`}>
             <AccordionTrigger>{faq.question}</AccordionTrigger>
